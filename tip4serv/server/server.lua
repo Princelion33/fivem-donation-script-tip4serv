@@ -117,7 +117,7 @@ if not Tip4serv then
         local getter_player = ""
         
         --Find player by licence if specified
-        if infos["xplayerid"] ~= "" then 
+        if infos["xplayerid"] and infos["xplayerid"] ~= "" then
             getter_player = "license:"..infos["xplayerid"]
             if loaded_players[getter_player] == nil then
                 getter_player = "licence:"..infos["xplayerid"]
@@ -266,3 +266,4 @@ RegisterCommand(Config.check_cmd_name, function(src, args, raw)
         return
     end
 end, false)
+
